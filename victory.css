@@ -1,0 +1,42 @@
+﻿body {
+    background-color: azure;
+    margin-top: auto;
+    margin-left: 18%
+}
+h1{
+    border: dashed thin black;
+    padding: 20px;
+    text-align: center;
+}
+#wrapper{
+    border: dotted thin red;
+    background-color: white;
+    width: 70%;
+    padding: 20px;
+}
+#nav{
+    border: solid thin pink;
+    padding: 10px;
+}
+footer{
+    border: solid thin green;
+}
+form{
+    border: thin solid orange;
+    padding: 20px;
+}
+aside{
+    float: left;
+    border: solid thin green;
+    padding: 10px;
+    position: relative;
+
+}
+main{
+    border: thin solid black;
+    padding: 10px;
+
+}
+#right{
+    float: right;
+}

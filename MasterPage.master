@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Victory Gaming</title>
+    <link href="victory.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+    <h1>Victory Gaming!!!</h1> 
+    <form id="form1" runat="server"> 
+     <div id="nav">
+         <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal">
+         </asp:Menu>
+         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+     </div> 
+    <main>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </main>
+    <footer>
+        FOOTER
+        </footer>
+    </form>
+    </div>
+</body>
+   
+</html>
