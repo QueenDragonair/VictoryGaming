@@ -21,30 +21,8 @@ public partial class Manage_addProduct : System.Web.UI.Page
 
         string filename = Path.GetFileName(imageUpload.PostedFile.FileName);
         string contentType = imageUpload.PostedFile.ContentType;
-        using (Stream fs = imageUpload.PostedFile.InputStream)
-        {
-            using (BinaryReader br = new BinaryReader(fs))
-            {
-                byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                string constr = ConfigurationManager.ConnectionStrings["VictoryString"].ConnectionString;
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    string query = "INSERT INTO Images (Name,ContentType,Data) VALUES (@Name, @ContentType, @Data)";
-                    using (SqlCommand cmd = new SqlCommand(query))
-                    {
-                        cmd.Connection = con;
-                        cmd.Parameters.AddWithValue("@Name", filename);
-                        cmd.Parameters.AddWithValue("@ContentType", contentType);
-                        cmd.Parameters.AddWithValue("@Data", bytes);
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                    }
-                }
-            }
-        }
-
-
+        Stream fs = imageUpload.PostedFile.InputStream;
+        ProductDA.Upload(filename, contentType, fs);
         addProduct();
 
     }
@@ -74,6 +52,7 @@ public partial class Manage_addProduct : System.Web.UI.Page
         aProduct.color = color;
         aProduct.gameID = gameId;
         aProduct.price = Convert.ToDecimal(price);
+        aProduct.imageId = ProductDA.getImageId();
 
         ProductDA.insertProduct(aProduct);
 
