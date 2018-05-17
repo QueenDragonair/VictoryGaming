@@ -11,4 +11,9 @@ public partial class management : System.Web.UI.Page
     {
 
     }
+
+    protected void btnGoToAddProduct_Click(object sender, EventArgs e)
+    {
+        Server.Transfer("~/Manage/addProduct.aspx");
+    }
 }

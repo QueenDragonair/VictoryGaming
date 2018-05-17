@@ -4,5 +4,6 @@
     Mangement Content
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
+    <asp:Button ID="btnGoToAddProduct" runat="server" OnClick="btnGoToAddProduct_Click" Text="Add Product" />
 </asp:Content>
 
