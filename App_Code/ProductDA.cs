@@ -17,7 +17,7 @@ public static class ProductDA
 
     public static void insertProduct(Product aProduct)
     {
-        string insertStatment = "insert into Product (name, gameid, size, color, price) values (@productName, @gameId, @size, @color,@price)";
+        string insertStatment = "insert into Product (name, gameid, size, color, price, imageId) values (@productName, @gameId, @size, @color,@price,@imageId)";
         SqlConnection con = new SqlConnection(getConnectionString());
         SqlCommand cmd = new SqlCommand(insertStatment, con);
 
@@ -26,6 +26,7 @@ public static class ProductDA
         cmd.Parameters.AddWithValue("@size", aProduct.size);
         cmd.Parameters.AddWithValue("@color", aProduct.color);
         cmd.Parameters.AddWithValue("@price", aProduct.price);
+        cmd.Parameters.AddWithValue("@imageId", aProduct.imageId);
 
         con.Open();
         cmd.ExecuteNonQuery();
