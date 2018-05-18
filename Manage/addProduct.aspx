@@ -50,6 +50,15 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td style="width: 108px">
+                <asp:Label ID="Label6" runat="server" Text="Image"></asp:Label>
+            </td>
+            <td style="width: 189px">
+                <asp:FileUpload ID="imageUpload" runat="server" />
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
             <td style="width: 108px">&nbsp;</td>
             <td style="width: 189px">
                 <asp:Button ID="btnAddProduct" runat="server" OnClick="btnAddProduct_Click" Text="Add Product" />

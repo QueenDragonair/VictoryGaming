@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 public partial class Manage_addProduct : System.Web.UI.Page
 {
@@ -13,6 +17,19 @@ public partial class Manage_addProduct : System.Web.UI.Page
     }
 
     protected void btnAddProduct_Click(object sender, EventArgs e)
+    {
+
+        string filename = Path.GetFileName(imageUpload.PostedFile.FileName);
+        string contentType = imageUpload.PostedFile.ContentType;
+        Stream fs = imageUpload.PostedFile.InputStream;
+        ProductDA.Upload(filename, contentType, fs);
+        addProduct();
+
+    }
+
+
+
+    private void addProduct()
     {
         string productName;
         string size;
@@ -35,10 +52,13 @@ public partial class Manage_addProduct : System.Web.UI.Page
         aProduct.color = color;
         aProduct.gameID = gameId;
         aProduct.price = Convert.ToDecimal(price);
+        aProduct.imageId = ProductDA.getImageId();
 
         ProductDA.insertProduct(aProduct);
 
         Server.Transfer("~/Products/products.aspx");
-
     }
+
+
+
 }

@@ -5,20 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class management : System.Web.UI.Page
+public partial class Manage_addGame : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
 
-    protected void btnGoToAddProduct_Click(object sender, EventArgs e)
-    {
-        Server.Transfer("~/Manage/addProduct.aspx");
-    }
-
     protected void btnAddGame_Click(object sender, EventArgs e)
     {
-        Server.Transfer("~/Manage/addGame.aspx");
+        string gameName;
+
+        gameName = txtGameName.Text;
+
+        Game aGame = new Game();
+        aGame.gameName = gameName;
+
+        GameDA.insertGame(aGame);
+
+        Server.Transfer("~/Products/products.aspx");
     }
 }

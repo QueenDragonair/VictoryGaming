@@ -5,5 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
     <asp:Button ID="btnGoToAddProduct" runat="server" OnClick="btnGoToAddProduct_Click" Text="Add Product" />
+    <asp:Button ID="btnAddGame" runat="server" OnClick="btnAddGame_Click" Text="Add Game" />
 </asp:Content>
 

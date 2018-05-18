@@ -3,26 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VictoryGaming", "..\..\WebSites\VictoryGaming\", "{3B3129D6-D6AA-4002-A81D-66AF55E0A1DE}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VictoryGaming", ".", "{3B3129D6-D6AA-4002-A81D-66AF55E0A1DE}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_59038"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\VictoryGaming\"
+		Debug.AspNetCompiler.PhysicalPath = "..\VictoryGaming\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59038\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_59038"
-		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\VictoryGaming\"
+		Release.AspNetCompiler.PhysicalPath = "..\VictoryGaming\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59038\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "59038"
-		SlnRelativePath = "..\..\WebSites\VictoryGaming\"
-		DefaultWebSiteLanguage = "Visual C#"
+		SlnRelativePath = "..\VictoryGaming\"
 	EndProjectSection
 EndProject
 Global
