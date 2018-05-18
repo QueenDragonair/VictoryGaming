@@ -15,13 +15,14 @@
         </tr>
         <tr>
             <td colspan="2">
-                <textarea id="txtComments" cols="20" name="S1" rows="2" title="Tell us what you think"></textarea></td>
+                <asp:Label ID="Label1" runat="server" Text="Comments"></asp:Label>
+                <textarea id="txtComments" cols="20" name="S1" rows="2" title="Tell us what you think" runat="server"></textarea></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 207px">&nbsp;</td>
             <td style="width: 207px">
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
             </td>
             <td>&nbsp;</td>
         </tr>
