@@ -18,7 +18,7 @@ public static class ProductDA
 
     public static void insertProduct(Product aProduct)
     {
-        string insertStatment = "insert into Product (name, gameid, size, color, price, imageId) values (@productName, @gameId, @size, @color,@price,@imageId)";
+        string insertStatment = "insert into Product (name, gameid, size, color, price, imageUrl) values (@productName, @gameId, @size, @color,@price,@imageUrl)";
         SqlConnection con = new SqlConnection(getConnectionString());
         SqlCommand cmd = new SqlCommand(insertStatment, con);
 
@@ -27,7 +27,7 @@ public static class ProductDA
         cmd.Parameters.AddWithValue("@size", aProduct.size);
         cmd.Parameters.AddWithValue("@color", aProduct.color);
         cmd.Parameters.AddWithValue("@price", aProduct.price);
-        cmd.Parameters.AddWithValue("@imageId", aProduct.imageId);
+        cmd.Parameters.AddWithValue("@imageUrl", aProduct.imageId);
 
         con.Open();
         cmd.ExecuteNonQuery();
@@ -50,44 +50,25 @@ public static class ProductDA
         return result;
     }
 
-    public static void Upload(string filename, string contentType, Stream fs)
+    public static List<string> getImages()
     {
-        using (fs)
+        var images = new List<string>();
+        string getStatement = "SELECT imageUrl from product";
+        SqlConnection con = new SqlConnection(getConnectionString());
+        using (SqlCommand cmd = new SqlCommand(getStatement, con))
         {
-            using (BinaryReader br = new BinaryReader(fs))
+            using (var reader = cmd.ExecuteReader())
             {
-                byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                string constr = ConfigurationManager.ConnectionStrings["VictoryString"].ConnectionString;
-                using (SqlConnection con = new SqlConnection(constr))
+                while (reader.Read())
                 {
-                    string query = "INSERT INTO Images (Name,ContentType,Data) VALUES (@Name, @ContentType, @Data)";
-                    using (SqlCommand cmd = new SqlCommand(query))
-                    {
-                        cmd.Connection = con;
-                        cmd.Parameters.AddWithValue("@Name", filename);
-                        cmd.Parameters.AddWithValue("@ContentType", contentType);
-                        cmd.Parameters.AddWithValue("@Data", bytes);
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                    }
+                    images.Add(reader["imageUrl"].ToString());
                 }
             }
         }
 
+        return images;
+
     }
 
-    public static int getImageId()
-    {
-        int result = 0;
-        string selectStatment = "SELECT MAX(Id) FROM Images";
-        SqlConnection con = new SqlConnection(getConnectionString());
-        SqlCommand cmd = new SqlCommand(selectStatment, con);
 
-        con.Open();
-        result = (Int32)cmd.ExecuteScalar();
-        con.Close();
-
-        return result;
-    }
 }

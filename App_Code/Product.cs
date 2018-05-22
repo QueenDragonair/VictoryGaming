@@ -15,7 +15,7 @@ public class Product
     public string color { get; set; }
     public decimal price { get; set; }
 
-    public int imageId { get; set; }
+    public string imageId { get; set; }
 
     public Product()
     {

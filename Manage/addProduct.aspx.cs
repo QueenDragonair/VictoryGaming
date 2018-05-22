@@ -19,10 +19,19 @@ public partial class Manage_addProduct : System.Web.UI.Page
     protected void btnAddProduct_Click(object sender, EventArgs e)
     {
 
-        string filename = Path.GetFileName(imageUpload.PostedFile.FileName);
-        string contentType = imageUpload.PostedFile.ContentType;
-        Stream fs = imageUpload.PostedFile.InputStream;
-        ProductDA.Upload(filename, contentType, fs);
+        if (imageUpload.HasFile)
+        {
+            string path = "\\Media\\" + imageUpload.FileName;
+            try
+            {
+                imageUpload.SaveAs(path);
+
+            }catch(System.IO.DirectoryNotFoundException ex)
+            {
+                throw;
+            }
+        }
+        
         addProduct();
 
     }
@@ -37,6 +46,7 @@ public partial class Manage_addProduct : System.Web.UI.Page
         string gameName;
         int gameId = 0;
         string price;
+        string imageUrl = "..\\Media\\" + imageUpload.FileName;
 
         productName = txtPname.Text;
         size = txtPsize.Text;
@@ -52,7 +62,7 @@ public partial class Manage_addProduct : System.Web.UI.Page
         aProduct.color = color;
         aProduct.gameID = gameId;
         aProduct.price = Convert.ToDecimal(price);
-        aProduct.imageId = ProductDA.getImageId();
+        aProduct.imageId = imageUrl;
 
         ProductDA.insertProduct(aProduct);
 

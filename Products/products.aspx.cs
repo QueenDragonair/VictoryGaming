@@ -9,6 +9,7 @@ public partial class products : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        var images = new List<string>();
+        images = ProductDA.getImages();
     }
 }
