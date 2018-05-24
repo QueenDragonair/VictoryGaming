@@ -21,4 +21,9 @@ public partial class management : System.Web.UI.Page
     {
         Server.Transfer("~/Manage/addGame.aspx");
     }
+
+    protected void btnCustomers_Click(object sender, EventArgs e)
+    {
+        Server.Transfer("~/Manage/viewCustomers.aspx");
+    }
 }

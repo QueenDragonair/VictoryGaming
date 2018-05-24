@@ -7,6 +7,5 @@
         <siteMapNode url="~/Account/login.aspx" title="Login" description="login to your account"/>
       <siteMapNode url="~/Cart/cart.aspx" title="Cart" description="go to your cart"/>
       <siteMapNode url="~/Account/register.aspx" title="Register" description="register"/>
-      <siteMapNode url="~/Manage/management.aspx" title="Manage" description="manage"/>
     </siteMapNode>
 </siteMap>

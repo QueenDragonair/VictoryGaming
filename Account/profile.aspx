@@ -4,31 +4,13 @@
     <table style="width: 100%">
         <tr>
             <td style="width: 261px">
-                <asp:Label ID="lblName" runat="server" Text="Name"></asp:Label>
                 <asp:TextBox ID="txtName" runat="server" ReadOnly="True"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 261px">
-                <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
-                <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 261px">
-                <asp:Label ID="lblCity" runat="server" Text="City"></asp:Label>
-                <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
-                <asp:Label ID="lblState" runat="server" Text="State"></asp:Label>
-                <asp:TextBox ID="txtState" runat="server" Width="31px"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 261px">
-                <asp:Label ID="lblZip" runat="server" Text="Zip"></asp:Label>
-                <asp:TextBox ID="txtZip" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -36,13 +18,6 @@
             <td style="width: 261px">
                 <asp:Label ID="lblChange" runat="server" Text="Change Password"></asp:Label>
                 <asp:TextBox ID="txtNewPass" runat="server"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 261px">
-                <asp:Label ID="lblComfirm" runat="server" Text="Label"></asp:Label>
-                <asp:TextBox ID="txtConfirmPass" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>

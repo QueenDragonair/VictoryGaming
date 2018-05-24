@@ -20,7 +20,14 @@ public partial class login : System.Web.UI.Page
         if (AccountDA.loginCustomer(email, password))
         {
             Session["email"] = email;
-            Server.Transfer("~/Products/products.aspx");
+
+            if(email == "Manager")
+            {
+                Server.Transfer("~/Manage/management.aspx");
+            }else{
+
+                Server.Transfer("~/Products/products.aspx");
+            }
         }else
         {
             lblOutput.Text = "Make sure you are registered or entered the correct information.";
