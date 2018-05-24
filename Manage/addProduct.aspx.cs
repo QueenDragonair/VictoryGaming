@@ -21,17 +21,19 @@ public partial class Manage_addProduct : System.Web.UI.Page
 
         if (imageUpload.HasFile)
         {
-            string path = "\\Media\\" + imageUpload.FileName;
+            string serverPath = Server.MapPath("Media");
+            string imagePath = serverPath + "/" + imageUpload.FileName;
             try
             {
-                imageUpload.SaveAs(path);
+                imageUpload.SaveAs(imagePath);
 
-            }catch(System.IO.DirectoryNotFoundException ex)
+            }
+            catch (System.IO.DirectoryNotFoundException ex)
             {
-                throw;
+                throw ex;
             }
         }
-        
+
         addProduct();
 
     }

@@ -57,6 +57,7 @@ public static class ProductDA
         SqlConnection con = new SqlConnection(getConnectionString());
         using (SqlCommand cmd = new SqlCommand(getStatement, con))
         {
+            con.Open();
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
@@ -65,7 +66,7 @@ public static class ProductDA
                 }
             }
         }
-
+        con.Close();
         return images;
 
     }
