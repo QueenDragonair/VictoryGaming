@@ -20,29 +20,6 @@
         </tr>
         <tr>
             <td style="width: 537px">
-                <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
-                <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 537px">
-                <asp:Label ID="lblCity" runat="server" Text="City"></asp:Label>
-                <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
-                <asp:Label ID="lblState" runat="server" Text="State"></asp:Label>
-                <asp:TextBox ID="txtState" runat="server" Width="26px"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 537px">
-                <asp:Label ID="lblZip" runat="server" Text="Zip"></asp:Label>
-                <asp:TextBox ID="txtZip" runat="server"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 537px">
                 <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
                 <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
             </td>
@@ -58,7 +35,7 @@
         <tr>
             <td style="width: 537px">&nbsp;</td>
             <td>
-                <asp:Button ID="btnRegister" runat="server" Text="Register" />
+                <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
             </td>
         </tr>
     </table>

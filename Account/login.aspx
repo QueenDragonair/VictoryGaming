@@ -17,9 +17,11 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 194px">&nbsp;</td>
+            <td style="width: 194px">
+                <asp:Label ID="lblOutput" runat="server"></asp:Label>
+            </td>
             <td>
-                <asp:Button ID="btnLogin" runat="server" Text="Login" />
+                <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
             </td>
         </tr>
     </table>

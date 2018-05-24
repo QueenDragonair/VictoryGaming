@@ -11,4 +11,21 @@ public partial class login : System.Web.UI.Page
     {
 
     }
+
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        string email = txtEmail.Text;
+        string password = txtPass.Text;
+
+        if (AccountDA.loginCustomer(email, password))
+        {
+            Session["email"] = email;
+            Server.Transfer("~/Products/products.aspx");
+        }else
+        {
+            lblOutput.Text = "Make sure you are registered or entered the correct information.";
+        }
+
+       
+    }
 }
