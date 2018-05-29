@@ -12,9 +12,4 @@ public partial class products : System.Web.UI.Page
         
     }
 
-    protected void btnPurchase_Click(object sender, EventArgs e)
-    {
-        var p = DataList1.SelectedItem;
-
-    }
 }
