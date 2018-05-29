@@ -71,9 +71,8 @@ public static class ProductDA
 
     }
 
-    public static void purchaseProduct(Product p)
+    public static void purchaseProduct(string name)
     {
-        string name = p.productName;
 
         string updateStatment = "Update Product where name=@name set purchased=True";
         SqlConnection con = new SqlConnection(getConnectionString());

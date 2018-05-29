@@ -53,7 +53,6 @@
                 <li runat="server" id="itemPlaceholder" />
             </ul>
             <div style="">
-                <asp:Button ID="btnRemove" runat="server" OnClick="btnRemove_Click" Text="Remove" />
             </div>
         </LayoutTemplate>
         <SelectedItemTemplate>
