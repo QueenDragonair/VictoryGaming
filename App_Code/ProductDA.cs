@@ -71,5 +71,21 @@ public static class ProductDA
 
     }
 
+    public static void purchaseProduct(Product p)
+    {
+        string name = p.productName;
+
+        string updateStatment = "Update Product where name=@name set purchased=True";
+        SqlConnection con = new SqlConnection(getConnectionString());
+        SqlCommand cmd = new SqlCommand(updateStatment, con);
+
+        cmd.Parameters.AddWithValue("@name", name);
+
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+
+    }
+
 
 }

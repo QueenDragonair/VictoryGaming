@@ -11,4 +11,14 @@ public partial class cart : System.Web.UI.Page
     {
 
     }
+
+    protected void btnRemove_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnPlaceOrder_Click(object sender, EventArgs e)
+    {
+
+    }
 }

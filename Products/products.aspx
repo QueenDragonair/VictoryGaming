@@ -19,6 +19,7 @@
             <br />
             <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
             <br />
+            <asp:Button ID="btnPurchase" runat="server" OnClick="btnPurchase_Click" Text="Purchase" ToolTip='<%# Eval("name") %>' UseSubmitBehavior="False" />
             <br />
             <br />
         </ItemTemplate>
