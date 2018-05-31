@@ -12,4 +12,15 @@ public partial class products : System.Web.UI.Page
         
     }
 
+    protected void DataList1_SelectedIndexChanged(object sender,
+    System.EventArgs e)
+    {
+        DataList1.DataBind();
+    }
+
+
+    protected void btnAddtoCart_Click(object sender, EventArgs e)
+    {
+
+    }
 }
