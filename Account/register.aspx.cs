@@ -18,12 +18,19 @@ public partial class register : System.Web.UI.Page
         string lName = txtLName.Text;
         string email = txtEmail.Text;
         string password = txtPassword.Text;
+        string confirm = txtConfirm.Text;
 
-        Customer c = new Customer(fName, lName, email, password);
+        if (password != confirm) {
+            lblConfirmation.Text = "Passwords do not match";
+        }
 
-        AccountDA.insertCustomer(c);
+        else
+        {
+            Customer c = new Customer(fName, lName, email, password);
 
-        Server.Transfer("~/Account/login.aspx");
+            AccountDA.insertCustomer(c);
 
+            Server.Transfer("~/Account/login.aspx");
+        }
     }
 }
