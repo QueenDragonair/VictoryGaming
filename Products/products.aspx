@@ -3,12 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
-    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" RepeatColumns="2"  OnItemCommand="DataList1_ItemCommand" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
+    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" RepeatColumns="2" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
         <ItemTemplate>
             <asp:Image ID="Image1" runat="server" Height="228px" ImageUrl='<%# Eval("imageUrl", "~/Manage/Media/{0}") %>' />
             <br />
             <br />
-&nbsp;<asp:Label ID="lblName" runat="server" Text='<%# Eval("name") %>' />
+            <asp:Button ID="btnSet" runat="server" CommandName="select" Text="Select" />
+            <br />
+        </ItemTemplate>
+        <SelectedItemTemplate>
+            <asp:Image ID="Image2" runat="server" Height="167px" ImageUrl='<%# Eval("imageUrl", "~/Manage/Media/{0}") %>' Width="152px" />
+            <br />
+            <br />
+            &nbsp;<asp:Label ID="lblName" runat="server" Text='<%# Eval("name") %>' />
             <br />
             size:
             <asp:Label ID="lblSize" runat="server" Text='<%# Eval("size") %>' />
@@ -20,12 +27,7 @@
             <asp:Label ID="lblPrice" runat="server" Text='<%# Eval("price") %>' />
             <br />
             <br />
-            <asp:Button ID="btnSelect" runat="server" CommandName="select" Height="27px" Text="Select" Width="95px" OnClick="DataList1_SelectedIndexChanged"/>
-            <br />
-        </ItemTemplate>
-        <SelectedItemTemplate>
-            <br />
-            <asp:Button ID="btnAddToCart" runat="server" Height="22px" Text="Add To Cart" Width="90px" />
+            <asp:Button ID="btnAddtoCart" runat="server" OnClick="btnAddtoCart_Click" Text="Add To Cart" />
             <br />
         </SelectedItemTemplate>
     </asp:DataList>

@@ -16,35 +16,34 @@ public partial class products : System.Web.UI.Page
     {
         DataList1.DataBind();
     }
-    protected void DataList1_ItemCommand(object source,
-                         DataListCommandEventArgs e)
-    {
-        int count = DataList1.Items.Count;
-        string[] lbls = { "lblName", "lblSize", "lblColor", "lblPrice" };
-        string text = "";
-
-        for (int i = 0; i < count; i++)
-        {
-            int index = DataList1.SelectedIndex;
-
-            for (int x = 0; x < lbls.Length; x++)
-            {
-                Label lbl = DataList1.Items[index].FindControl(lbls[x]) as Label;
-                text = text + lbl.Text + " ";
-
-            }
-        }
-    }
-
-    protected void DataList1_SelectedIndexChanged(object sender,
-    System.EventArgs e)
-    {
-        DataList1.DataBind();
-    }
-
-
+ 
     protected void btnAddtoCart_Click(object sender, EventArgs e)
     {
+        Label lbl;
+        int index = DataList1.SelectedIndex;
+        var list = (List<Product>)Session["cart"];
 
+        lbl = DataList1.Items[index].FindControl("lblName") as Label;
+        string name = lbl.Text;
+
+        lbl = DataList1.Items[index].FindControl("lblSize") as Label;
+        string size = lbl.Text;
+
+        lbl = DataList1.Items[index].FindControl("lblColor") as Label;
+        string color = lbl.Text;
+
+        lbl = DataList1.Items[index].FindControl("lblPrice") as Label;
+        string price = lbl.Text;
+
+        Product p = new Product();
+        p.productName = name;
+        p.size = size;
+        p.color = color;
+        p.price = Convert.ToDecimal(price);
+
+        list.Add(p);
+
+        Session["cart"] = list;
+       
     }
 }
